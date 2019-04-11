@@ -7,8 +7,7 @@ const blue_pixel_ref = "036eaf"
 const yellow_pixel_ref = "85982d"
 
 func get_cones():
-	var img = get_viewport().get_texture().get_data()
-	img.flip_y()
+	var img = get_viewport().get_texture().get_data()  # image is flipped in y
 	img.shrink_x2()
 	img.shrink_x2()
 	img.shrink_x2()
@@ -16,8 +15,8 @@ func get_cones():
 	var output = ""
 	var blue_pixel = -1
 	var yellow_pixel = -1
-	for y in range(img.get_height(), img.get_height() / 2, -1):
-		for x in range(img.get_width(), 0, -1):
+	for y in range(0, img.get_height() / 2):
+		for x in range(img.get_width()):
 			var pixel = img.get_pixel(x, y).to_html(false)
 			if pixel == blue_pixel_ref:
 				blue_pixel = x
