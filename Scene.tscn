@@ -20,8 +20,10 @@ fov = 90.0
 size = 50.0
 
 [node name="Cones" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="BlueCones" type="Node" parent="Cones"]
+editor/display_folded = true
 
 [node name="BlueCone" parent="Cones/BlueCones" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 30 )
@@ -216,4 +218,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.1812, 1, 25.1162 )
 
 [node name="YellowCone31" parent="Cones/YellowCones" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.2182, 1, 36.1338 )
+
+[node name="HUD" type="Node" parent="."]
+
+[node name="BlueIndicator" type="ColorRect" parent="HUD"]
+margin_left = 111.43
+margin_top = 129.062
+margin_right = 135.43
+margin_bottom = 153.062
+rect_pivot_offset = Vector2( 12, 12 )
+color = Color( 0.0117647, 0.662745, 0.956863, 1 )
+
+[node name="YellowIndicator" type="ColorRect" parent="HUD"]
+margin_left = 150.0
+margin_top = 129.062
+margin_right = 174.0
+margin_bottom = 153.062
+rect_pivot_offset = Vector2( 12, 12 )
+color = Color( 1, 0.921569, 0.231373, 1 )
 
