@@ -46,7 +46,7 @@ func _physics_process(delta):
 	## Update HUD
 	node_hud_blue.set_position(Vector2(0, pixels[3] / 2) * 16 + Vector2(pixels[0].x, -pixels[0].y) * 8)
 	node_hud_yellow.set_position(Vector2(0, pixels[3] / 2) * 16 + Vector2(pixels[1].x, -pixels[1].y) * 8)
-	
+
 
 	## Local vectors
 	var forward = get_transform().basis.x
