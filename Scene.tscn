@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BlueCone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://YellowCone.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GoalPost.tscn" type="PackedScene" id=5]
 
 [node name="Scene" type="Node"]
 
@@ -20,6 +21,7 @@ fov = 90.0
 size = 50.0
 
 [node name="Cones" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="BlueCones" type="Node" parent="Cones"]
 editor/display_folded = true
@@ -121,6 +123,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.1416, 1, 18.9643 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.9784, 1, 25.7276 )
 
 [node name="YellowCones" type="Node" parent="Cones"]
+editor/display_folded = true
 
 [node name="YellowCone" parent="Cones/YellowCones" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 40 )
@@ -235,4 +238,7 @@ margin_right = 174.0
 margin_bottom = 153.062
 rect_pivot_offset = Vector2( 12, 12 )
 color = Color( 1, 0.921569, 0.231373, 1 )
+
+[node name="GoalPost" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 34.766 )
 
