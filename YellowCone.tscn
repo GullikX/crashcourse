@@ -13,7 +13,7 @@ top_radius = 0.001
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 1, 0.921569, 0.231373, 1 )
 
-[node name="Cone" type="RigidBody"]
+[node name="YellowCone" type="RigidBody"]
 physics_material_override = SubResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
