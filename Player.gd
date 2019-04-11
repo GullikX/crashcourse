@@ -26,9 +26,9 @@ func get_cones():
 	for y in range(0, img.get_height() / 2):
 		for x in range(img.get_width()):
 			var pixel = img.get_pixel(x, y).to_html(false)
-			if pixel == blue_pixel_ref:
+			if blue_pixel.x == -1 and pixel == blue_pixel_ref:
 				blue_pixel = Vector2(x, y)
-			elif pixel == yellow_pixel_ref:
+			elif yellow_pixel.x == -1 and pixel == yellow_pixel_ref:
 				yellow_pixel = Vector2(x, y)
 			if blue_pixel.x != -1 and yellow_pixel.x != -1:
 				return [blue_pixel, yellow_pixel, img.get_width(), img.get_height()]
