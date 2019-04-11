@@ -10,8 +10,10 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -4.25654e-08, 0.227484, -0.973782, 9.94364e-09, 0.973782, 0.227484, 1, 0, -4.37114e-08, -12.0783, 6.32715, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0 )
+projection = 1
 fov = 90.0
+size = 50.0
 
 [node name="Cone" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
