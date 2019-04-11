@@ -32,7 +32,6 @@ func get_cones():
 
 func controller(blue_pixel, yellow_pixel, width):
 	var error = 0.5 - (blue_pixel.x + yellow_pixel.x) / 2 / width
-	print((blue_pixel.x + yellow_pixel.x) / 2 / width)
 	return error * k_p
 
 func _physics_process(delta):
