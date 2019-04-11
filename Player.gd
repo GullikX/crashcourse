@@ -7,7 +7,7 @@ const linear_friction = 0.07
 const blue_pixel_ref = "0d47a1"
 const yellow_pixel_ref = "ffd600"
 
-const k_p = 0.009
+const k_p = 0.00125
 const k_i = 0
 const k_d = 0
 
@@ -16,15 +16,12 @@ onready var node_hud_yellow = get_node("/root/Scene/HUD/YellowIndicator")
 
 func get_cones():
 	var img = get_viewport().get_texture().get_data()  # image is flipped in y
-	img.shrink_x2()
-	img.shrink_x2()
-	img.shrink_x2()
 	img.lock()
 	var output = ""
 	var blue_pixel = Vector2(-1, -1)
 	var yellow_pixel = Vector2(-1, -1)
-	for y in range(0, img.get_height() / 2):
-		for x in range(img.get_width()):
+	for y in range(0, img.get_height() / 2, 8):
+		for x in range(0, img.get_width(), 8):
 			var pixel = img.get_pixel(x, y).to_html(false)
 			if blue_pixel.x == -1 and pixel == blue_pixel_ref:
 				blue_pixel = Vector2(x, y)
@@ -44,8 +41,8 @@ func _physics_process(delta):
 	var input = controller(pixels[0], pixels[1], pixels[2], pixels[3])
 	
 	## Update HUD
-	node_hud_blue.set_position(Vector2(0, pixels[3] / 2) * 16 + Vector2(pixels[0].x, -pixels[0].y) * 8)
-	node_hud_yellow.set_position(Vector2(0, pixels[3] / 2) * 16 + Vector2(pixels[1].x, -pixels[1].y) * 8)
+	node_hud_blue.set_position(Vector2(0, pixels[3] / 2) * 2 + Vector2(pixels[0].x, -pixels[0].y))
+	node_hud_yellow.set_position(Vector2(0, pixels[3] / 2) * 2 + Vector2(pixels[1].x, -pixels[1].y))
 
 
 	## Local vectors
