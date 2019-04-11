@@ -7,6 +7,7 @@ extents = Vector3( 100, 0.5, 100 )
 size = Vector3( 200, 1, 200 )
 
 [sub_resource type="SpatialMaterial" id=3]
+flags_unshaded = true
 albedo_color = Color( 0.376471, 0.490196, 0.545098, 1 )
 
 [node name="Ground" type="StaticBody"]

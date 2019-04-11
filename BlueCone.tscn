@@ -11,7 +11,8 @@ points = PoolVector3Array( 0, 1, 0, 0, -1, 1, 0.707, -1, 0.707, 1, -1, 0, 0.707,
 top_radius = 0.001
 
 [sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 0.0117647, 0.662745, 0.956863, 1 )
+flags_unshaded = true
+albedo_color = Color( 0.0509804, 0.278431, 0.631373, 1 )
 
 [node name="BlueCone" type="RigidBody"]
 physics_material_override = SubResource( 1 )

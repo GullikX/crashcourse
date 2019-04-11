@@ -4,8 +4,8 @@ const turn_torque = 80
 const acc_force = 30
 const linear_friction = 0.07
 
-const blue_pixel_ref = "036eaf"
-const yellow_pixel_ref = "85982d"
+const blue_pixel_ref = "0d47a1"
+const yellow_pixel_ref = "ffd600"
 
 const k_p = 0.009
 const k_i = 0

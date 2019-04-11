@@ -1,25 +1,26 @@
 [gd_scene load_steps=5 format=2]
 
-[sub_resource type="PhysicsMaterial" id=5]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 0.5
 bounce = 100.0
 
-[sub_resource type="ConvexPolygonShape" id=4]
+[sub_resource type="ConvexPolygonShape" id=2]
 points = PoolVector3Array( 0, 1, 0, 0, -1, 1, 0.707, -1, 0.707, 1, -1, 0, 0.707, -1, -0.707, 0, -1, -1, -0.707, -1, -0.707, -1, -1, 0, -0.707, -1, 0.707 )
 
-[sub_resource type="CylinderMesh" id=2]
+[sub_resource type="CylinderMesh" id=3]
 top_radius = 0.001
 
-[sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 1, 0.921569, 0.231373, 1 )
+[sub_resource type="SpatialMaterial" id=4]
+flags_unshaded = true
+albedo_color = Color( 1, 0.839216, 0, 1 )
 
 [node name="YellowCone" type="RigidBody"]
-physics_material_override = SubResource( 5 )
+physics_material_override = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-mesh = SubResource( 2 )
-material/0 = SubResource( 3 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
 
