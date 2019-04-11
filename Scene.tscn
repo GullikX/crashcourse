@@ -21,10 +21,8 @@ fov = 90.0
 size = 50.0
 
 [node name="Cones" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="BlueCones" type="Node" parent="Cones"]
-editor/display_folded = true
 
 [node name="BlueCone" parent="Cones/BlueCones" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 30 )
@@ -60,7 +58,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6213, 1, -22.3862 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1839, 1, -35.1402 )
 
 [node name="BlueCone12" parent="Cones/BlueCones" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 45.2751, 1, -43.7579 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5019, 1, -47.2022 )
 
 [node name="BlueCone13" parent="Cones/BlueCones" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.7658, 1, -59.4662 )
@@ -80,17 +78,14 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.579, 1, -66.5472 )
 [node name="BlueCone17" parent="Cones/BlueCones" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5495, 1, -59.2037 )
 
-[node name="BlueCone18" parent="Cones/BlueCones" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.18773, 1, -48.7643 )
-
 [node name="BlueCone32" parent="Cones/BlueCones" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8428, 1, -53.7355 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.18764, 1, -51.205 )
 
 [node name="BlueCone19" parent="Cones/BlueCones" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.71847, 1, -43.4956 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10176, 1, -44.9717 )
 
 [node name="BlueCone20" parent="Cones/BlueCones" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7109, 1, -44.7745 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.1101, 1, -44.7042 )
 
 [node name="BlueCone21" parent="Cones/BlueCones" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.4589, 1, -49.0766 )
@@ -123,7 +118,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.1416, 1, 18.9643 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.9784, 1, 25.7276 )
 
 [node name="YellowCones" type="Node" parent="Cones"]
-editor/display_folded = true
 
 [node name="YellowCone" parent="Cones/YellowCones" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 40 )
@@ -159,7 +153,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.0913, 1, -17.8863 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 48.6596, 1, -30.1306 )
 
 [node name="YellowCone12" parent="Cones/YellowCones" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 56.8537, 1, -41.7761 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 58.4001, 1, -43.1819 )
 
 [node name="YellowCone13" parent="Cones/YellowCones" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.3739, 1, -59.1207 )
@@ -168,13 +162,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 62.3739, 1, -59.1207 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 58.1751, 1, -69.0452 )
 
 [node name="YellowCone15" parent="Cones/YellowCones" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.8924, 1, -75.7648 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.7996, 1, -76.7489 )
 
 [node name="YellowCone14" parent="Cones/YellowCones" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 44.6887, 1, -80.558 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.5959, 1, -80.558 )
 
 [node name="YellowCone16" parent="Cones/YellowCones" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1518, 1, -81.0603 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.1518, 1, -79.7951 )
 
 [node name="YellowCone18" parent="Cones/YellowCones" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9115, 1, -75.8814 )
@@ -183,16 +177,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.9115, 1, -75.8814 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.1083, 1, -67.7494 )
 
 [node name="YellowCone20" parent="Cones/YellowCones" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50524, 1, -60.0942 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.50524, 1, -57.5637 )
 
 [node name="YellowCone33" parent="Cones/YellowCones" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.83812, 1, -62.7402 )
 
 [node name="YellowCone21" parent="Cones/YellowCones" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6633, 1, -60.0007 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.6633, 1, -58.0325 )
 
 [node name="YellowCone22" parent="Cones/YellowCones" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.0006, 1, -61.8249 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.0006, 1, -61.2626 )
 
 [node name="YellowCone23" parent="Cones/YellowCones" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -52.5634, 1, -60.9523 )
@@ -224,20 +218,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.2182, 1, 36.1338 )
 [node name="HUD" type="Node" parent="."]
 
 [node name="BlueIndicator" type="ColorRect" parent="HUD"]
-margin_left = 111.43
+margin_left = 110.861
 margin_top = 129.062
-margin_right = 135.43
-margin_bottom = 153.062
-rect_pivot_offset = Vector2( 12, 12 )
-color = Color( 0.0117647, 0.662745, 0.956863, 1 )
+margin_right = 142.861
+margin_bottom = 161.062
+rect_pivot_offset = Vector2( 16, 16 )
+color = Color( 0.219608, 0.556863, 0.235294, 1 )
 
 [node name="YellowIndicator" type="ColorRect" parent="HUD"]
 margin_left = 150.0
 margin_top = 129.062
-margin_right = 174.0
-margin_bottom = 153.062
-rect_pivot_offset = Vector2( 12, 12 )
-color = Color( 1, 0.921569, 0.231373, 1 )
+margin_right = 182.0
+margin_bottom = 161.062
+rect_pivot_offset = Vector2( 16, 16 )
+color = Color( 0.827451, 0.184314, 0.184314, 1 )
 
 [node name="GoalPost" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 34.766 )
