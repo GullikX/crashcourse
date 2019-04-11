@@ -1,7 +1,7 @@
 extends RigidBody
 
 const turn_torque = 80
-const acc_force = 30
+const acc_force = 70
 const linear_friction = 0.07
 
 const blue_pixel_ref = "0d47a1"
