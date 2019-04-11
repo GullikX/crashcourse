@@ -2,6 +2,7 @@ extends RigidBody
 
 const turn_torque = 80
 const acc_force = 30
+const linear_friction = 0.07
 
 const blue_pixel_ref = "036eaf"
 const yellow_pixel_ref = "85982d"
@@ -50,6 +51,8 @@ func _physics_process(delta):
 	#apply_torque_impulse(up * (Input.get_action_strength("left") - Input.get_action_strength("right")) * delta * turn_torque)
 	apply_torque_impulse(up * input * delta * turn_torque)
 
-	## Sideways forces
+	## Friction forces
 	var v = get_linear_velocity()
 	apply_central_impulse(-left * v.project(left).length() * delta * 60 * sign(v.dot(left)))
+	apply_central_impulse(-linear_velocity * linear_friction)
+	print(linear_velocity.length())
