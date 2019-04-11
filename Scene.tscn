@@ -11,7 +11,7 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0953, 1.82351, 34.2542 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.718, 0.5, 34.254 )
 
 [node name="Camera" type="Camera" parent="Player"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1, 2, 0 )
@@ -20,6 +20,15 @@ size = 50.0
 
 [node name="BlueCone" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 30 )
+
+[node name="BlueCone7" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 30 )
+
+[node name="BlueCone8" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 30 )
+
+[node name="BlueCone9" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, 30 )
 
 [node name="BlueCone2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1, 28.3415 )
@@ -38,6 +47,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.3776, 1, -5.97853 )
 
 [node name="YellowCone" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 40 )
+
+[node name="YellowCone7" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1, 40 )
+
+[node name="YellowCone8" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 1, 40 )
+
+[node name="YellowCone9" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 1, 40 )
 
 [node name="YellowCone2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9055, 1, 38.094 )
