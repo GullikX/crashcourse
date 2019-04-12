@@ -19,6 +19,10 @@ config/name="Crash Course"
 run/main_scene="res://Scene.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/stretch/shrink=2.0
+
 [input]
 
 acc={
