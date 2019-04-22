@@ -11,8 +11,8 @@ func _ready():
 
 
 func _draw():
-	draw_line(green_line1, green_line2, Color(0, 255, 0), 1)
-	draw_line(red_line1, red_line2, Color(255, 0, 0), 1)
+	draw_line(green_line1, green_line2, Color(0, 255, 0), 2)
+	draw_line(red_line1, red_line2, Color(255, 0, 0), 2)
 
 
 func _process(delta):

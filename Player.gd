@@ -30,9 +30,10 @@ func get_cones():
 
 
 func array_multiply(a, b):
-	var p = Array()
+	var p = PoolRealArray()
+	p.resize(len(a))
 	for i in range(len(a)):
-		p.append(a[i] * b[i])
+		p[i] = a[i] * b[i]
 	return p
 
 
@@ -49,9 +50,10 @@ func sum(values):
 	return s
 
 func minus(array, number):
-	var result = Array()
+	var result = PoolRealArray()
+	result.resize(len(array))
 	for i in range(len(array)):
-		result.append(array[i] - number)
+		result[i] = array[i] - number
 	return result
 
 
@@ -87,16 +89,16 @@ func _physics_process(delta):
 	var img_width = pixels[2]
 	var img_height = pixels[3]
 
-	var blue_x = Array()
-	var blue_y = Array()
+	var blue_x = PoolRealArray()
+	var blue_y = PoolRealArray()
 	for pixel in blue_pixels:
 		blue_x.append(pixel[0])
 		blue_y.append(pixel[1])
 	var fit_blue = linear_fit(blue_x, blue_y)
 	print(fit_blue)
 
-	var yellow_x = Array()
-	var yellow_y = Array()
+	var yellow_x = PoolRealArray()
+	var yellow_y = PoolRealArray()
 	for pixel in yellow_pixels:
 		yellow_x.append(pixel[0])
 		yellow_y.append(pixel[1])
@@ -111,8 +113,6 @@ func _physics_process(delta):
 	if fit_yellow[1] != 0:
 		node_hud.red_line1 = Vector2(-fit_yellow[0] / fit_yellow[1], 0)
 		node_hud.red_line2 = Vector2((img_height * 8 - fit_yellow[0]) / fit_yellow[1], img_height * 8)
-	
-
 
 	## Local vectors
 	var forward = get_transform().basis.x
