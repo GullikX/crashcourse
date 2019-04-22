@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://BlueCone.tscn" type="PackedScene" id=3]
 [ext_resource path="res://YellowCone.tscn" type="PackedScene" id=4]
-[ext_resource path="res://GoalPost.tscn" type="PackedScene" id=5]
+[ext_resource path="res://HUD.gd" type="Script" id=5]
+[ext_resource path="res://GoalPost.tscn" type="PackedScene" id=6]
 
 [node name="Scene" type="Node"]
 
@@ -22,8 +23,10 @@ size = 50.0
 far = 1000.0
 
 [node name="Cones" type="Node" parent="."]
+editor/display_folded = true
 
 [node name="BlueCones" type="Node" parent="Cones"]
+editor/display_folded = true
 
 [node name="BlueCone" parent="Cones/BlueCones" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 30 )
@@ -273,24 +276,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.1812, 1, 25.1162 )
 [node name="YellowCone31" parent="Cones/YellowCones" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.2182, 1, 36.1338 )
 
-[node name="HUD" type="Node" parent="."]
+[node name="HUD" type="Node2D" parent="."]
+script = ExtResource( 5 )
 
-[node name="BlueIndicator" type="ColorRect" parent="HUD"]
-margin_left = -48.139
-margin_top = 30.062
-margin_right = -32.139
-margin_bottom = 46.062
-rect_pivot_offset = Vector2( 8, 8 )
-color = Color( 0.219608, 0.556863, 0.235294, 1 )
-
-[node name="YellowIndicator" type="ColorRect" parent="HUD"]
-margin_left = -50.0
-margin_top = 71.062
-margin_right = -34.0
-margin_bottom = 87.062
-rect_pivot_offset = Vector2( 8, 8 )
-color = Color( 0.827451, 0.184314, 0.184314, 1 )
-
-[node name="GoalPost" parent="." instance=ExtResource( 5 )]
+[node name="GoalPost" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 34.766 )
 
