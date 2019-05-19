@@ -81,11 +81,13 @@ func _physics_process(delta):
 	var up = get_transform().basis.y
 	var left = get_transform().basis.z
 	
-	## Input
-	#apply_central_impulse(forward * Input.get_action_strength("acc") * delta * acc_force)
+	## Uncomment for autonomous drive
 	apply_central_impulse(forward * delta * acc_force)
-	#apply_torque_impulse(up * (Input.get_action_strength("left") - Input.get_action_strength("right")) * delta * turn_torque)
 	apply_torque_impulse(up * input * delta * turn_torque)
+	
+	## Uncomment for manual drive
+	#apply_central_impulse(forward * Input.get_action_strength("acc") * delta * acc_force)
+	#apply_torque_impulse(up * (Input.get_action_strength("left") - Input.get_action_strength("right")) * delta * turn_torque)
 
 	## Friction forces
 	var v = get_linear_velocity()
