@@ -5,15 +5,16 @@ const acc_force = 70
 const linear_friction = 0.07
 
 const blue_pixel_ref = "0d47a1"
-const orange_pixel_ref = "f57f17"
 const yellow_pixel_ref = "ffd600"
+const orange_pixel_ref = "f57f17"
 
-const blue_push_factor = -0.07
-const yellow_push_factor = -0.07
-const hud_factor = 20
+const push_factor = -0.07
+const hud_gain = 30
 
 onready var node_hud_blue = get_node("/root/Scene/HUD/BlueIndicator")
 onready var node_hud_yellow = get_node("/root/Scene/HUD/YellowIndicator")
+onready var node_hud_orange_left = get_node("/root/Scene/HUD/OrangeIndicatorLeft")
+onready var node_hud_orange_right = get_node("/root/Scene/HUD/OrangeIndicatorRight")
 onready var node_hud_total_left = get_node("/root/Scene/HUD/TotalIndicatorLeft")
 onready var node_hud_total_right = get_node("/root/Scene/HUD/TotalIndicatorRight")
 
@@ -22,6 +23,7 @@ func get_push():
 	img.lock()
 	var blue_push = 0
 	var yellow_push = 0
+	var orange_push = 0
 	for y in range(0, img.get_height() / 2, 8):
 		for x in range(0, img.get_width(), 8):
 			var pixel = img.get_pixel(x, y).to_html(false)
@@ -30,14 +32,16 @@ func get_push():
 			elif pixel == orange_pixel_ref:
 				if x < img.get_width() / 2:
 					blue_push += x
+					orange_push += x
 				else:
 					yellow_push += x - img.get_width()
+					orange_push += x - img.get_width()
 			elif pixel == yellow_pixel_ref:
 				yellow_push += x - img.get_width()
-	return [float(blue_push) / img.get_width(), float(yellow_push) / img.get_width()]
+	return [float(blue_push) / img.get_width(), float(yellow_push) / img.get_width(), float(orange_push) / img.get_width()]
 
 func controller(blue_push, yellow_push):
-	return blue_push_factor * blue_push + yellow_push_factor * yellow_push
+	return push_factor * (blue_push + yellow_push)
 
 func _physics_process(delta):
 	## Check for cones
@@ -47,18 +51,27 @@ func _physics_process(delta):
 	## Update HUD
 	var anchor_x = get_viewport().size.x / 2
 	node_hud_blue.set_position(Vector2(anchor_x, 8))
-	node_hud_blue.set_size(Vector2(-hud_factor * blue_push_factor * push[0], 8))
+	node_hud_blue.set_size(Vector2(-hud_gain * push_factor * push[0], 8))
 
 	node_hud_yellow.set_position(Vector2(anchor_x, 8))
-	node_hud_yellow.set_size(Vector2(hud_factor * yellow_push_factor * push[1], 8))
+	node_hud_yellow.set_size(Vector2(hud_gain * push_factor * push[1], 8))
+	
+	node_hud_orange_left.set_position(Vector2(anchor_x, 10))
+	node_hud_orange_right.set_position(Vector2(anchor_x, 10))
+	if push_factor * push[2] > 0:
+		node_hud_orange_left.set_size(Vector2(hud_gain * (push_factor * push[2]), 4))
+		node_hud_orange_right.set_size(Vector2(0, 4))
+	else:
+		node_hud_orange_right.set_size(Vector2(-hud_gain * (push_factor * push[2]), 4))
+		node_hud_orange_left.set_size(Vector2(0, 4))
 
 	node_hud_total_left.set_position(Vector2(anchor_x, 4))
 	node_hud_total_right.set_position(Vector2(anchor_x, 4))
-	if blue_push_factor * push[0] + yellow_push_factor * push[1] > 0:
-		node_hud_total_left.set_size(Vector2(hud_factor * (blue_push_factor * push[0] + yellow_push_factor * push[1]), 16))
+	if push_factor * (push[0] + push[1]) > 0:
+		node_hud_total_left.set_size(Vector2(hud_gain * push_factor * (push[0] + push[1]), 16))
 		node_hud_total_right.set_size(Vector2(0, 16))
 	else:
-		node_hud_total_right.set_size(Vector2(-hud_factor * (blue_push_factor * push[0] + yellow_push_factor * push[1]), 16))
+		node_hud_total_right.set_size(Vector2(-hud_gain * push_factor * (push[0] + push[1]), 16))
 		node_hud_total_left.set_size(Vector2(0, 16))
 
 

@@ -287,39 +287,55 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -61.1812, 1, 25.1162 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -47.2182, 1, 36.1338 )
 
 [node name="HUD" type="Node" parent="."]
-editor/display_folded = true
 
 [node name="TotalIndicatorLeft" type="ColorRect" parent="HUD"]
-margin_left = 432.12
-margin_top = 12.0193
-margin_right = 448.12
-margin_bottom = 28.0193
+margin_left = 416.045
+margin_top = 3.58663
+margin_right = 432.045
+margin_bottom = 19.5866
 rect_rotation = 180.0
 rect_pivot_offset = Vector2( 0, 8 )
 
 [node name="TotalIndicatorRight" type="ColorRect" parent="HUD"]
-margin_left = 378.273
-margin_top = 44.2982
-margin_right = 394.273
-margin_bottom = 60.2982
+margin_left = 363.779
+margin_top = 36.6561
+margin_right = 379.779
+margin_bottom = 52.6561
 rect_pivot_offset = Vector2( 0, 8 )
 
 [node name="BlueIndicator" type="ColorRect" parent="HUD"]
-margin_left = 411.17
-margin_top = 16.8424
-margin_right = 427.17
-margin_bottom = 24.8424
+margin_left = 422.765
+margin_top = 35.2889
+margin_right = 438.765
+margin_bottom = 43.2889
 rect_pivot_offset = Vector2( 0, 4 )
 color = Color( 0.0509804, 0.278431, 0.631373, 1 )
 
 [node name="YellowIndicator" type="ColorRect" parent="HUD"]
-margin_left = 417.143
-margin_top = 27.9719
-margin_right = 433.143
-margin_bottom = 35.9719
+margin_left = 409.501
+margin_top = 32.4518
+margin_right = 425.501
+margin_bottom = 40.4518
 rect_rotation = 180.0
 rect_pivot_offset = Vector2( 0, 4 )
 color = Color( 1, 0.839216, 0, 1 )
+
+[node name="OrangeIndicatorLeft" type="ColorRect" parent="HUD"]
+margin_left = 492.435
+margin_top = 51.6207
+margin_right = 508.435
+margin_bottom = 55.6207
+rect_rotation = 180.0
+rect_pivot_offset = Vector2( 0, 2 )
+color = Color( 0.960784, 0.498039, 0.0901961, 1 )
+
+[node name="OrangeIndicatorRight" type="ColorRect" parent="HUD"]
+margin_left = 419.182
+margin_top = 64.2283
+margin_right = 435.182
+margin_bottom = 68.2283
+rect_pivot_offset = Vector2( 0, 2 )
+color = Color( 0.960784, 0.498039, 0.0901961, 1 )
 
 [node name="GoalPost" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 34.766 )
