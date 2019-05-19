@@ -12,12 +12,17 @@ const k_p = 0.07
 const k_i = 0
 const k_d = 0
 
-const blue_push_factor = 0.07
-const yellow_push_factor = 0.07
+const blue_push_factor = -0.07
+const yellow_push_factor = -0.07
 const orange_push_factor = 0.01
+const hud_factor = 20
 
 onready var node_hud_blue = get_node("/root/Scene/HUD/BlueIndicator")
 onready var node_hud_yellow = get_node("/root/Scene/HUD/YellowIndicator")
+onready var node_hud_orange_left = get_node("/root/Scene/HUD/OrangeIndicatorLeft")
+onready var node_hud_orange_right = get_node("/root/Scene/HUD/OrangeIndicatorRight")
+onready var node_hud_total_left = get_node("/root/Scene/HUD/TotalIndicatorLeft")
+onready var node_hud_total_right = get_node("/root/Scene/HUD/TotalIndicatorRight")
 
 func get_push():
 	var img = get_viewport().get_texture().get_data()  # image is flipped in y
@@ -37,8 +42,7 @@ func get_push():
 	return [float(blue_push) / img.get_width(), float(orange_push) / img.get_width(), float(yellow_push) / img.get_width()]
 
 func controller(blue_push, orange_push, yellow_push):
-	var push = blue_push_factor * blue_push + yellow_push_factor * yellow_push + orange_push_factor * orange_push
-	return -push
+	return blue_push_factor * blue_push + yellow_push_factor * yellow_push + orange_push_factor * orange_push
 
 func _physics_process(delta):
 	## Check for cones
@@ -46,8 +50,30 @@ func _physics_process(delta):
 	var input = controller(push[0], push[1], push[2])
 	
 	## Update HUD
-	#node_hud_blue.set_position(Vector2(0, pixels[3] / 2) * 2 + Vector2(pixels[0].x, -pixels[0].y))
-	#node_hud_yellow.set_position(Vector2(0, pixels[3] / 2) * 2 + Vector2(pixels[1].x, -pixels[1].y))
+	var anchor_x = get_viewport().size.x / 2
+	node_hud_blue.set_position(Vector2(anchor_x, 8))
+	node_hud_blue.set_size(Vector2(-hud_factor * blue_push_factor * push[0], 8))
+
+	node_hud_yellow.set_position(Vector2(anchor_x, 8))
+	node_hud_yellow.set_size(Vector2(hud_factor * yellow_push_factor * push[2], 8))
+
+	node_hud_orange_left.set_position(Vector2(anchor_x, 20))
+	node_hud_orange_right.set_position(Vector2(anchor_x, 20))
+	if orange_push_factor * push[1] > 0:
+		node_hud_orange_left.set_size(Vector2(hud_factor * orange_push_factor * push[1], 8))
+		node_hud_orange_right.set_size(Vector2(0, 8))
+	else:
+		node_hud_orange_right.set_size(Vector2(-hud_factor * orange_push_factor * push[1], 8))
+		node_hud_orange_left.set_size(Vector2(0, 8))
+
+	node_hud_total_left.set_position(Vector2(anchor_x, 4))
+	node_hud_total_right.set_position(Vector2(anchor_x, 4))
+	if blue_push_factor * push[0] + yellow_push_factor * push[2] + orange_push_factor * push[1] > 0:
+		node_hud_total_left.set_size(Vector2(hud_factor * (blue_push_factor * push[0] + yellow_push_factor * push[2] + orange_push_factor * push[1]), 28))
+		node_hud_total_right.set_size(Vector2(0, 28))
+	else:
+		node_hud_total_right.set_size(Vector2(-hud_factor * (blue_push_factor * push[0] + yellow_push_factor * push[2] + orange_push_factor * push[1]), 28))
+		node_hud_total_left.set_size(Vector2(0, 28))
 
 
 	## Local vectors
