@@ -8,10 +8,6 @@ const blue_pixel_ref = "0d47a1"
 const orange_pixel_ref = "f57f17"
 const yellow_pixel_ref = "ffd600"
 
-const k_p = 0.07
-const k_i = 0
-const k_d = 0
-
 const blue_push_factor = -0.07
 const yellow_push_factor = -0.07
 const hud_factor = 20
