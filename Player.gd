@@ -32,10 +32,10 @@ func get_push():
 			elif pixel == orange_pixel_ref:
 				if x < img.get_width() / 2:
 					blue_push += x
-					orange_push += x
+					orange_push += x  # used only for HUD indicator
 				else:
 					yellow_push += x - img.get_width()
-					orange_push += x - img.get_width()
+					orange_push += x - img.get_width()  # used only for HUD indicator
 			elif pixel == yellow_pixel_ref:
 				yellow_push += x - img.get_width()
 	return [float(blue_push) / img.get_width(), float(yellow_push) / img.get_width(), float(orange_push) / img.get_width()]
