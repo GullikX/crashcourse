@@ -12,7 +12,9 @@ const k_p = 0.07
 const k_i = 0
 const k_d = 0
 
-const orange_push_factor = 100
+const blue_push_factor = 0.07
+const yellow_push_factor = 0.07
+const orange_push_factor = 0.01
 
 onready var node_hud_blue = get_node("/root/Scene/HUD/BlueIndicator")
 onready var node_hud_yellow = get_node("/root/Scene/HUD/YellowIndicator")
@@ -29,17 +31,14 @@ func get_push():
 			if pixel == blue_pixel_ref:
 				blue_push += x
 			elif pixel == orange_pixel_ref:
-				orange_push += 1
+				orange_push += x - img.get_width() / 2
 			elif pixel == yellow_pixel_ref:
 				yellow_push += x - img.get_width()
-	return [float(blue_push) / img.get_width(), float(orange_push), float(yellow_push) / img.get_width()]
+	return [float(blue_push) / img.get_width(), float(orange_push) / img.get_width(), float(yellow_push) / img.get_width()]
 
 func controller(blue_push, orange_push, yellow_push):
-	var push = blue_push + yellow_push
-	if orange_push > 0:
-		push /= (orange_push * orange_push_factor)
-	print(orange_push * orange_push_factor, ", ", push)
-	return -push * k_p
+	var push = blue_push_factor * blue_push + yellow_push_factor * yellow_push + orange_push_factor * orange_push
+	return -push
 
 func _physics_process(delta):
 	## Check for cones
