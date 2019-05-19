@@ -79,9 +79,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.2619, 1, -97.3371 )
 [node name="BlueCone40" parent="Cones/BlueCones" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.3775, 1, -89.7122 )
 
-[node name="BlueCone41" parent="Cones/BlueCones" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4769, 1, -81.9233 )
-
 [node name="BlueCone36" parent="Cones/BlueCones" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.8868, 1, -138.003 )
 
@@ -103,9 +100,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -74.07, 1, -93.5167 )
 [node name="BlueCone31" parent="Cones/BlueCones" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -75.6587, 1, -106.483 )
 
-[node name="BlueCone15" parent="Cones/BlueCones" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -67.4452, 1, -80.7023 )
-
 [node name="BlueCone32" parent="Cones/BlueCones" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.863475, 1, -34.7701 )
 
@@ -114,12 +108,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.59846, 1, -40.6881 )
 
 [node name="BlueCone20" parent="Cones/BlueCones" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.7501, 1, -47.563 )
-
-[node name="BlueCone21" parent="Cones/BlueCones" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9932, 1, -52.8691 )
-
-[node name="BlueCone22" parent="Cones/BlueCones" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.0098, 1, -53.1887 )
 
 [node name="BlueCone23" parent="Cones/BlueCones" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.5664, 1, -44.1199 )
@@ -154,11 +142,35 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.2524, 1, -61.7677 )
 [node name="OrangeCone2" parent="Cones/OrangeCones" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -56.8128, 1, -71.2747 )
 
+[node name="OrangeCone5" parent="Cones/OrangeCones" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -67.1672, 1, -81.8644 )
+
+[node name="OrangeCone7" parent="Cones/OrangeCones" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.0882, 1, -62.097 )
+
+[node name="OrangeCone8" parent="Cones/OrangeCones" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -50.5374, 1, -53.3899 )
+
+[node name="OrangeCone6" parent="Cones/OrangeCones" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -57.8326, 1, -88.9242 )
+
 [node name="OrangeCone3" parent="Cones/OrangeCones" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49.7194, 1, -80.4509 )
 
+[node name="OrangeCone9" parent="Cones/OrangeCones" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.3069, 1, -87.5891 )
+
+[node name="OrangeCone10" parent="Cones/OrangeCones" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.1681, 1, -80.6078 )
+
 [node name="OrangeCone4" parent="Cones/OrangeCones" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -38.1208, 1, -72.7804 )
+
+[node name="OrangeCone11" parent="Cones/OrangeCones" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1976, 1, -66.4266 )
+
+[node name="OrangeCone12" parent="Cones/OrangeCones" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.8849, 1, -54.3465 )
 
 [node name="YellowCones" type="Node" parent="Cones"]
 editor/display_folded = true
@@ -199,9 +211,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.45, 1, -30.2373 )
 [node name="YellowCone12" parent="Cones/YellowCones" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4868, 1, -38.1661 )
 
-[node name="YellowCone13" parent="Cones/YellowCones" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -44.2546, 1, -88.2881 )
-
 [node name="YellowCone41" parent="Cones/YellowCones" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.5687, 1, -95.6517 )
 
@@ -238,9 +247,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.0095, 1, -107.542 )
 [node name="YellowCone14" parent="Cones/YellowCones" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63.7894, 1, -97.389 )
 
-[node name="YellowCone16" parent="Cones/YellowCones" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -58.8369, 1, -89.0713 )
-
 [node name="YellowCone18" parent="Cones/YellowCones" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -73.8588, 1, -40.6892 )
 
@@ -252,12 +258,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4171, 1, -59.5715 )
 
 [node name="YellowCone33" parent="Cones/YellowCones" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.20125, 1, -53.0528 )
-
-[node name="YellowCone21" parent="Cones/YellowCones" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5019, 1, -65.6076 )
-
-[node name="YellowCone24" parent="Cones/YellowCones" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -64.2326, 1, -60.9591 )
 
 [node name="YellowCone25" parent="Cones/YellowCones" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70.1232, 1, -51.6733 )
