@@ -8,7 +8,7 @@ const blue_pixel_ref = "0d47a1"
 const yellow_pixel_ref = "ffd600"
 const orange_pixel_ref = "f57f17"
 
-const push_factor = -0.07
+const push_factor = 0.07
 const hud_gain = 30
 
 onready var node_hud_blue = get_node("/root/Scene/HUD/BlueIndicator")
@@ -28,20 +28,20 @@ func get_push():
 		for x in range(0, img.get_width(), 8):
 			var pixel = img.get_pixel(x, y).to_html(false)
 			if pixel == blue_pixel_ref:
-				blue_push += x
+				blue_push += img.get_width() - x
 			elif pixel == orange_pixel_ref:
-				if x < img.get_width() / 2:
-					blue_push += x
-					orange_push += x  # used only for HUD indicator
+				if x > img.get_width() / 2:
+					blue_push += img.get_width() - x
+					orange_push -= img.get_width() - x  # used only for HUD indicator
 				else:
-					yellow_push += x - img.get_width()
-					orange_push += x - img.get_width()  # used only for HUD indicator
+					yellow_push += x
+					orange_push += x  # used only for HUD indicator
 			elif pixel == yellow_pixel_ref:
-				yellow_push += x - img.get_width()
+				yellow_push += x
 	return [float(blue_push) / img.get_width(), float(yellow_push) / img.get_width(), float(orange_push) / img.get_width()]
 
 func controller(blue_push, yellow_push):
-	return push_factor * (blue_push + yellow_push)
+	return push_factor * (blue_push - yellow_push)
 
 func _physics_process(delta):
 	## Check for cones
@@ -49,29 +49,30 @@ func _physics_process(delta):
 	var input = controller(push[0], push[1])
 	
 	## Update HUD
+	print(push[0], " ", push[1], " ", push[2])
 	var anchor_x = get_viewport().size.x / 2
 	node_hud_blue.set_position(Vector2(anchor_x, 8))
-	node_hud_blue.set_size(Vector2(-hud_gain * push_factor * push[0], 8))
+	node_hud_blue.set_size(Vector2(hud_gain * push_factor * push[0], 8))
 
 	node_hud_yellow.set_position(Vector2(anchor_x, 8))
 	node_hud_yellow.set_size(Vector2(hud_gain * push_factor * push[1], 8))
 	
 	node_hud_orange_left.set_position(Vector2(anchor_x, 10))
 	node_hud_orange_right.set_position(Vector2(anchor_x, 10))
-	if push_factor * push[2] > 0:
-		node_hud_orange_left.set_size(Vector2(hud_gain * (push_factor * push[2]), 4))
+	if push_factor * push[2] < 0:
+		node_hud_orange_left.set_size(Vector2(-hud_gain * (push_factor * push[2]), 4))
 		node_hud_orange_right.set_size(Vector2(0, 4))
 	else:
-		node_hud_orange_right.set_size(Vector2(-hud_gain * (push_factor * push[2]), 4))
+		node_hud_orange_right.set_size(Vector2(hud_gain * (push_factor * push[2]), 4))
 		node_hud_orange_left.set_size(Vector2(0, 4))
 
 	node_hud_total_left.set_position(Vector2(anchor_x, 4))
 	node_hud_total_right.set_position(Vector2(anchor_x, 4))
-	if push_factor * (push[0] + push[1]) > 0:
-		node_hud_total_left.set_size(Vector2(hud_gain * push_factor * (push[0] + push[1]), 16))
+	if push_factor * (push[0] - push[1]) > 0:
+		node_hud_total_left.set_size(Vector2(hud_gain * push_factor * (push[0] - push[1]), 16))
 		node_hud_total_right.set_size(Vector2(0, 16))
 	else:
-		node_hud_total_right.set_size(Vector2(-hud_gain * push_factor * (push[0] + push[1]), 16))
+		node_hud_total_right.set_size(Vector2(-hud_gain * push_factor * (push[0] - push[1]), 16))
 		node_hud_total_left.set_size(Vector2(0, 16))
 
 
@@ -85,8 +86,8 @@ func _physics_process(delta):
 	apply_torque_impulse(up * input * delta * turn_torque)
 	
 	## Uncomment for manual drive
-	#apply_central_impulse(forward * Input.get_action_strength("acc") * delta * acc_force)
-	#apply_torque_impulse(up * (Input.get_action_strength("left") - Input.get_action_strength("right")) * delta * turn_torque)
+	apply_central_impulse(forward * Input.get_action_strength("acc") * delta * acc_force)
+	apply_torque_impulse(up * (Input.get_action_strength("left") - Input.get_action_strength("right")) * delta * turn_torque)
 
 	## Friction forces
 	var v = get_linear_velocity()
