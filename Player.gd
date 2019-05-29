@@ -86,8 +86,8 @@ func _physics_process(delta):
 	apply_torque_impulse(up * input * delta * turn_torque)
 	
 	## Uncomment for manual drive
-	apply_central_impulse(forward * Input.get_action_strength("acc") * delta * acc_force)
-	apply_torque_impulse(up * (Input.get_action_strength("left") - Input.get_action_strength("right")) * delta * turn_torque)
+	#apply_central_impulse(forward * Input.get_action_strength("acc") * delta * acc_force)
+	#apply_torque_impulse(up * (Input.get_action_strength("left") - Input.get_action_strength("right")) * delta * turn_torque)
 
 	## Friction forces
 	var v = get_linear_velocity()
