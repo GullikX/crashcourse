@@ -1,5 +1,5 @@
 # Crashcourse
-Kiwi simulation using Godot engine
+Self driving car simulation using Godot engine
 
 Clone the repo and import the 'project.godot' file using Godot 3.1 or later.
 
