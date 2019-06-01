@@ -49,7 +49,6 @@ func _physics_process(delta):
 	var input = controller(push[0], push[1])
 	
 	## Update HUD
-	print(push[0], " ", push[1], " ", push[2])
 	var anchor_x = get_viewport().size.x / 2
 	node_hud_blue.set_position(Vector2(anchor_x, 8))
 	node_hud_blue.set_size(Vector2(hud_gain * push_factor * push[0], 8))
